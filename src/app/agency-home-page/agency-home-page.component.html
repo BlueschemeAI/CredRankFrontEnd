@@ -1,0 +1,431 @@
+﻿﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/assets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="/assets/plugins/slick/slick.css">
+  <link rel="stylesheet" href="/assets/plugins/slick/slick-theme.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>CREDRANK</title>
+</head>
+
+<body>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container container-large">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/" alt="Debtors">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bars"></i> <span>Categories</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a >Category one</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a >Category Two</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a >Category Three</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+  <aside id="sidebar" style="background-image: url(assets/images/sidebar.png)">
+    <div class="sidebar-header">
+      <a [routerLink]="['/agencyHome']" routerLinkActive="router-link-active" class="sidebar-brand">
+        <img src="assets/images/logo.png" alt="Credrank">
+      </a>
+    </div>
+    <div class="sidebar-body">
+      <ul class="sidebar-nav">
+        <li>
+          <a [routerLink]="['/agencyHome']" class="s-nav-item active"><i class="fas fa-home"></i> <span
+              class="nav-item-text">Home</span></a>
+        </li>
+        <li>
+          <a [routerLink]="['/agencyClients']" (click)="location.reload()" class="s-nav-item"><i
+              class="far fa-file-alt"></i> <span class="nav-item-text">Clients</span></a>
+        </li>
+        <li>
+          <a [routerLink]="['/agencyDebitors']" (click)="location.reload()" routerLinkActive="router-link-active"
+            class="s-nav-item"><i class="far fa-user"></i> <span class="nav-item-text">Debtors</span></a>
+        </li>
+        <li>
+          <a [routerLink]="['/agencyDisputes']" (click)="location.reload()" class="s-nav-item"><i
+              class="fas fa-user-tie"></i> <span class="nav-item-text">Disputes</span></a>
+        </li>
+        <li>
+          <a class="s-nav-item"><i class="fas fa-tools"></i> <span class="nav-item-text">Payments</span></a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <main id="main-content">
+    <div class="main-content-header">
+      <div class="container-fluid">
+        <div class="main-content-header-block">
+          <ul class="content-nav ml-auto">
+            <li>
+              <a>
+                <i class="fas fa-bell"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-body">
+      <div class="container-fluid container-fluid-fixed">
+        <h6 class="common-title">Quick status</h6>
+        <div class="slider-q_status c-mb">
+          <div class="slide-item">
+            <div class="card card-custom card-q_status">
+              <div class="card-body">
+                <div class="q_status-label">Total debtors</div>
+                <div class="q_status-numbers">45,673 <span class="q_status-icon"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="card card-custom card-q_status">
+              <div class="card-body">
+                <div class="q_status-label">Pending Cases</div>
+                <div class="q_status-numbers text-primary">67 <span class="q_status-icon"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="card card-custom card-q_status">
+              <div class="card-body">
+                <div class="q_status-label">New debtors</div>
+                <div class="q_status-numbers">60 <span class="q_status-icon text-success"><i
+                      class="fas fa-long-arrow-alt-up"></i></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="card card-custom card-q_status">
+              <div class="card-body">
+                <div class="q_status-label">Returning debtors</div>
+                <div class="q_status-numbers">31% <span class="q_status-icon text-success"><i
+                      class="fas fa-long-arrow-alt-up"></i></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="card card-custom card-q_status">
+              <div class="card-body">
+                <div class="q_status-label">Today’s Earnings</div>
+                <div class="q_status-numbers">$59213 <span class="q_status-icon text-danger"><i
+                      class="fas fa-long-arrow-alt-down"></i></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="card card-custom card-q_status">
+              <div class="card-body">
+                <div class="q_status-label">Yesterday’s Earnings</div>
+                <div class="q_status-numbers">$70,673 <span class="q_status-icon"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="row gutters-10">
+                    <div class="col-md-3 col-lg-2 col-xl-2 c-mb">
+                        <div class="card card-custom card-q_status">
+                            <div class="card-body">
+                                <div class="q_status-label">Total debtors</div>
+                                <div class="q_status-numbers">45,673 <span class="q_status-icon"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 c-mb">
+                        <div class="card card-custom card-q_status">
+                            <div class="card-body">
+                                <div class="q_status-label">Pending Appointments</div>
+                                <div class="q_status-numbers text-primary">67 <span class="q_status-icon"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 c-mb">
+                        <div class="card card-custom card-q_status">
+                            <div class="card-body">
+                                <div class="q_status-label">New debtors</div>
+                                <div class="q_status-numbers">60 <span class="q_status-icon text-success"><i class="fas fa-long-arrow-alt-up"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 c-mb">
+                        <div class="card card-custom card-q_status">
+                            <div class="card-body">
+                                <div class="q_status-label">Returning debtors</div>
+                                <div class="q_status-numbers">31% <span class="q_status-icon text-success"><i class="fas fa-long-arrow-alt-up"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 c-mb">
+                        <div class="card card-custom card-q_status">
+                            <div class="card-body">
+                                <div class="q_status-label">Today’s Earnings</div>
+                                <div class="q_status-numbers">$59213 <span class="q_status-icon text-danger"><i class="fas fa-long-arrow-alt-down"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 c-mb">
+                        <div class="card card-custom card-q_status">
+                            <div class="card-body">
+                                <div class="q_status-label">Yesterday’s Earnings</div>
+                                <div class="q_status-numbers">$70,673 <span class="q_status-icon"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+        <div class="row">
+          <div class="col-md-5 col-lg-4 col-xl-4">
+            <h6 class="common-title">Disputes</h6>
+            <div class="card card-custom card-up_appointment">
+              <div>
+                <ul class="up_appointments">
+                  <li class="up_appointment">
+                    <div class="up_appointment-doctor">
+                      <h5 class="doctor-name">Dora Floyd</h5>
+                      <span class="appoint-time">in next 2 hours</span>
+                    </div>
+                    <div class="up_appointments-tags">
+                      <span class="up_tag">Reference</span>
+                      <span class="up_tag">Leah Baker</span>
+                    </div>
+                    <ul class="up_appointment-actions">
+                      <li><a class="btn btn-primary">Details</a></li>
+                      <li><a class="btn btn-secondary">Re-schedule</a></li>
+                      <li><a class="btn btn-danger btn-icon_only"><i class="fas fa-times"></i></a></li>
+                    </ul>
+                  </li>
+                  <li class="up_appointment">
+                    <div class="up_appointment-doctor">
+                      <h5 class="doctor-name">Dora Floyd</h5>
+                      <span class="appoint-time">in next 2 hours</span>
+                    </div>
+                    <div class="up_appointments-tags">
+                      <span class="up_tag">Reference</span>
+                      <span class="up_tag">Leah Baker</span>
+                    </div>
+                    <ul class="up_appointment-actions">
+                      <li><a class="btn btn-primary">Details</a></li>
+                      <li><a class="btn btn-secondary">Re-schedule</a></li>
+                      <li><a class="btn btn-danger btn-icon_only"><i class="fas fa-times"></i></a></li>
+                    </ul>
+                  </li>
+                  <li class="up_appointment">
+                    <div class="up_appointment-doctor">
+                      <h5 class="doctor-name">Dora Floyd</h5>
+                      <span class="appoint-time">in next 2 hours</span>
+                    </div>
+                    <div class="up_appointments-tags">
+                      <span class="up_tag">Reference</span>
+                      <span class="up_tag">Leah Baker</span>
+                    </div>
+                    <ul class="up_appointment-actions">
+                      <li><a class="btn btn-primary">Details</a></li>
+                      <li><a class="btn btn-secondary">Re-schedule</a></li>
+                      <li><a class="btn btn-danger btn-icon_only"><i class="fas fa-times"></i></a></li>
+                    </ul>
+                  </li>
+                  <li class="up_appointment">
+                    <div class="up_appointment-doctor">
+                      <h5 class="doctor-name">Dora Floyd</h5>
+                      <span class="appoint-time">in next 2 hours</span>
+                    </div>
+                    <div class="up_appointments-tags">
+                      <span class="up_tag">Reference</span>
+                      <span class="up_tag">Leah Baker</span>
+                    </div>
+                    <ul class="up_appointment-actions">
+                      <li><a class="btn btn-primary">Details</a></li>
+                      <li><a class="btn btn-secondary">Re-schedule</a></li>
+                      <li><a class="btn btn-danger btn-icon_only"><i class="fas fa-times"></i></a></li>
+                    </ul>
+                  </li>
+                  <li class="up_appointment">
+                    <div class="up_appointment-doctor">
+                      <h5 class="doctor-name">Dora Floyd</h5>
+                      <span class="appoint-time">in next 2 hours</span>
+                    </div>
+                    <div class="up_appointments-tags">
+                      <span class="up_tag">Reference</span>
+                      <span class="up_tag">Leah Baker</span>
+                    </div>
+                    <ul class="up_appointment-actions">
+                      <li><a class="btn btn-primary">Details</a></li>
+                      <li><a class="btn btn-secondary">Re-schedule</a></li>
+                      <li><a class="btn btn-danger btn-icon_only"><i class="fas fa-times"></i></a></li>
+                    </ul>
+                  </li>
+                  <li class="up_appointment">
+                    <div class="up_appointment-doctor">
+                      <h5 class="doctor-name">Dora Floyd</h5>
+                      <span class="appoint-time">in next 2 hours</span>
+                    </div>
+                    <div class="up_appointments-tags">
+                      <span class="up_tag">Reference</span>
+                      <span class="up_tag">Leah Baker</span>
+                    </div>
+                    <ul class="up_appointment-actions">
+                      <li><a class="btn btn-primary">Details</a></li>
+                      <li><a class="btn btn-secondary">Re-schedule</a></li>
+                      <li><a class="btn btn-danger btn-icon_only"><i class="fas fa-times"></i></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7 col-lg-8 col-xl-8">
+            <div class="row">
+              <div class="col-md-12 col-lg-12 col-xl-12 c-mb">
+                <h6 class="common-title">Website visitor status</h6>
+                <div class="card card-custom">
+                  <div>
+                    <canvas id="chart_line"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-xl-6 c-mb">
+                <h6 class="common-title">Creditor</h6>
+                <div class="card card-custom">
+                  <div>
+                    <ul class="available-doctors">
+                      <li class="doctor-item">
+                        <a class="doctor-image">
+                          <img src="/assets/images/a/2.jpg" alt="">
+                        </a>
+                        <div class="doctor-denote">
+                          <h5 class="doctor-name">
+                            <a>Bettie Castro</a>
+                          </h5>
+                          <span class="doctor-specialist">Tactical</span>
+                        </div>
+                      </li>
+                      <li class="doctor-item">
+                        <a class="doctor-image">
+                          <img src="assets/images/a/3.jpg" alt="">
+                        </a>
+                        <div class="doctor-denote">
+                          <h5 class="doctor-name">
+                            <a>Bettie Castro</a>
+                          </h5>
+                          <span class="doctor-specialist">Tactical</span>
+                        </div>
+                      </li>
+                      <li class="doctor-item">
+                        <a class="doctor-image">
+                          <img src="/assets/images/a/4.jpg" alt="">
+                        </a>
+                        <div class="doctor-denote">
+                          <h5 class="doctor-name">
+                            <a>Bettie Castro</a>
+                          </h5>
+                          <span class="doctor-specialist">Tactical</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-xl-6 c-mb">
+                <h6 class="common-title">Today’s income/expense</h6>
+                <div class="card">
+                  <div class="card-body">
+                    <canvas id="pieChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="/assets/plugins/jquery/jquery-3.2.1.js"></script>
+  <script src="/assets/plugins/popper/popper.js"></script>
+  <script src="/assets/plugins/bootstrap/js/bootstrap.js"></script>
+  <script src="/assets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="/assets/plugins/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.slider-q_status').slick({
+        slidesToShow: 5,
+        infinite: true,
+        arrows: false,
+        responsive: [{
+            breakpoint: 1600,
+            settings: {
+              slidesToShow: 4
+            }
+          },
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    })
+
+  </script>
+  <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

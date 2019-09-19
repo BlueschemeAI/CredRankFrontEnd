@@ -1,0 +1,140 @@
+<section class="block-py hero">
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <img src="/assets/images/logo1.png" alt="Credrank">
+    </div>
+
+    <div class="log-card --login">
+
+
+      <h5 class="log-heading text-center">Login to Credrank</h5>
+      <mat-tab-group>
+        <mat-tab label="Agency Login">
+
+          <form [formGroup]="agencyLogin" (ngSubmit)="onSubmit_Agency()">
+            <input type="hidden" name="csrfmiddlewaretoken"
+              value="QXM2oVjTsd4LAzbJrTt5EioojHDwELxX9tUoK0H86EtMedTjxl8re9J93WJ21bsh">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group mb-4">
+                  <input type="text" placeholder="Email Address" formControlName="agency_email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && agencyValidation.agency_email.errors }" />
+                  <div *ngIf="submitted && agencyValidation.agency_email.errors" class="invalid-feedback">
+                    <div *ngIf="agencyValidation.agency_email.errors.required">Email is required</div>
+                    <div *ngIf="agencyValidation.agency_email.errors.email">Email must be a valid email address</div>
+                  </div>
+                  <!-- <input type="text" name="email" class="form-control form-control-lg form-control-custom" placeholder="Email Address"> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group mb-4">
+                  <input type="password" placeholder="Password" formControlName="agency_password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && agencyValidation.agency_password.errors }" />
+                  <div *ngIf="submitted && agencyValidation.agency_password.errors" class="invalid-feedback">
+                    <div *ngIf="agencyValidation.agency_password.errors.required">Password is required</div>
+                  </div>
+                  <!-- <input type="password" name="password" class="form-control form-control-lg form-control-custom" placeholder="Password"> -->
+                </div>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <a  class="btn btn-link btn-block px-0 text-left">Forgot Password?</a>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-lg btn-custom btn-block">Login</button>
+              </div>
+            </div>
+          </form>
+        </mat-tab>
+        <mat-tab label="Company Login">
+
+          <form [formGroup]="companyLogin" (ngSubmit)="onSubmit_company()">
+            <input type="hidden" name="csrfmiddlewaretoken"
+              value="QXM2oVjTsd4LAzbJrTt5EioojHDwELxX9tUoK0H86EtMedTjxl8re9J93WJ21bsh">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group mb-4">
+                  <input type="text" placeholder="Email Address" formControlName="company_email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && companyValidation.company_email.errors }" />
+                  <div *ngIf="submitted && companyValidation.company_email.errors" class="invalid-feedback">
+                    <div *ngIf="companyValidation.company_email.errors.required">Email is required</div>
+                    <div *ngIf="companyValidation.company_email.errors.email">Email must be a valid email address</div>
+                  </div>
+                  <!-- <input type="text" name="email" class="form-control form-control-lg form-control-custom" placeholder="Email Address"> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group mb-4">
+                  <input type="password" placeholder="Password" formControlName="company_password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && companyValidation.company_password.errors }" />
+                  <div *ngIf="submitted && companyValidation.company_password.errors" class="invalid-feedback">
+                    <div *ngIf="companyValidation.company_password.errors.required">Password is required</div>
+                  </div>
+                  <!-- <input type="password" name="password" class="form-control form-control-lg form-control-custom" placeholder="Password"> -->
+                </div>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <a  class="btn btn-link btn-block px-0 text-left">Forgot Password?</a>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-lg btn-custom btn-block">Login</button>
+              </div>
+            </div>
+          </form>
+        </mat-tab>
+
+        <mat-tab label="Invidual">
+          <form [formGroup]="invidualLogin" (ngSubmit)="onSubmit_Invidual()">
+            <input type="hidden" name="csrfmiddlewaretoken"
+              value="QXM2oVjTsd4LAzbJrTt5EioojHDwELxX9tUoK0H86EtMedTjxl8re9J93WJ21bsh">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group mb-4">
+                  <input type="text" placeholder="Email Address" formControlName="invidual_email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && invidualValidation.invidual_email.errors }" />
+                  <div *ngIf="submitted && invidualValidation.invidual_email.errors" class="invalid-feedback">
+                    <div *ngIf="invidualValidation.invidual_email.errors.required">Email is required</div>
+                    <div *ngIf="invidualValidation.invidual_email.errors.email">Email must be a valid email address
+                    </div>
+                  </div>
+                  <!-- <input type="text" name="email" class="form-control form-control-lg form-control-custom" placeholder="Email Address"> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group mb-4">
+                  <input type="password" placeholder="Password" formControlName="invidual_password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && invidualValidation.invidual_password.errors }" />
+                  <div *ngIf="submitted && invidualValidation.invidual_password.errors" class="invalid-feedback">
+                    <div *ngIf="invidualValidation.invidual_password.errors.required">Password is required</div>
+                  </div>
+                  <!-- <input type="password" name="password" class="form-control form-control-lg form-control-custom" placeholder="Password"> -->
+                </div>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <a  class="btn btn-link btn-block px-0 text-left">Forgot Password?</a>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-lg btn-custom btn-block">Login</button>
+              </div>
+            </div>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class="text-center pt-4">
+      Don’t have an account? <a href="/signup/">Sign up</a> here.
+    </div>
+  </div>
+</section>
