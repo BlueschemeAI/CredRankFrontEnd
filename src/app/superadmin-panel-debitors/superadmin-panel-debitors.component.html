@@ -52,7 +52,7 @@
     </nav> -->
   <aside id="sidebar" style="background-image: url(assets/images/sidebar.png)">
     <div class="sidebar-header">
-      <a [routerLink]="['/adminHome']" (click)="()" routerLinkActive="router-link-active"
+      <a [routerLink]="['/adminHome']"  routerLinkActive="router-link-active"
         class="sidebar-brand">
         <img src="assets/images/logo.png" alt="Debtors">
       </a>
@@ -60,15 +60,15 @@
     <div class="sidebar-body">
       <ul class="sidebar-nav">
         <li>
-          <a [routerLink]="['/adminHome']" (click)="()" class="s-nav-item "><i class="fas fa-home"></i>
+          <a [routerLink]="['/adminHome']"  class="s-nav-item "><i class="fas fa-home"></i>
             <span class="nav-item-text">Dashboard</span></a>
         </li>
         <li>
-          <a [routerLink]="['/adminCreditors']" (click)="()" class="s-nav-item"><i
+          <a [routerLink]="['/adminCreditors']"  class="s-nav-item"><i
               class="far fa-file-alt"></i> <span class="nav-item-text">Creditors</span></a>
         </li>
         <li>
-          <a [routerLink]="['/adminDebitors']" (click)="()" class="s-nav-item active"><i
+          <a [routerLink]="['/adminDebitors']"  class="s-nav-item active"><i
               class="far fa-user"></i> <span class="nav-item-text">Debtors</span></a>
         </li>
       </ul>
