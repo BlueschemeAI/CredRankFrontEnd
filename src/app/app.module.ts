@@ -18,7 +18,8 @@ import { AgencyDisputesComponent } from './agency-disputes/agency-disputes.compo
 import { LoginComponent } from './login/login.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AgencyClientsComponent } from './agency-clients/agency-clients.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './api.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,9 +41,10 @@ import { AgencyClientsComponent } from './agency-clients/agency-clients.componen
     MatCardModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
   ],
-  providers: [LazyLoadScriptService],
+  providers: [LazyLoadScriptService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

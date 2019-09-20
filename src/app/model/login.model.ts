@@ -1,8 +1,8 @@
 export class login{
-    public agency_Email: String;
-    public agency_Password: String;    
+    public email: String = "";
+    public password: String = "";    
     constructor(public loginData: any){
-        this.agency_Email = loginData.agency_email;
-        this.agency_Password = loginData.agency_password;
+        this.email = loginData.agency_email;
+        this.password = loginData.agency_password;
     }
 }

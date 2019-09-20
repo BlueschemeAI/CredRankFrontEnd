@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { login } from '../model/login.model';
+import { ApiService } from "../api.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,9 +14,7 @@ export class LoginComponent implements OnInit {
   companyLogin: FormGroup;
   invidualLogin: FormGroup;
   submitted = false;
-  constructor(private router: Router, private formBuilder: FormBuilder) {
-    // this.createForm();
-
+  constructor(private router: Router, private formBuilder: FormBuilder, private _apiService: ApiService) {
   }
 
   ngOnInit() {
@@ -47,8 +46,14 @@ export class LoginComponent implements OnInit {
       return;
     }
     console.log("Json Data",this.agencyLogin.value);
-    let agencyLoginDetails =new login(this.agencyLogin);
+    let agencyLoginDetails =new login(this.agencyLogin.value);
     console.log(agencyLoginDetails);
+    let checkvalue = this._apiService.login(this.agencyLogin.value)
+    // .subscribe((data: any)=>{
+    //   console.log("Data", data)
+    // })
+    console.log("checkvalue from REST",checkvalue)
+
   }
   onSubmit_company() {
     this.submitted = true;
